@@ -11,13 +11,35 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "rootroot",
+  password: "8287141Gk!",
   
-  database: "ice_creamDB"
+  database: "corp_db"
 });
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId);
-  connection.end();
-});
+const main = [
+  {
+    type: "list",
+    message: "Choose what you'd like to do",
+    choices: ["View all employees", "View all employees by department", "View all employees by role", "Add employee", "Add role", "Add department", "Update employee role"],
+    name: "main"
+  }
+]
+
+const addEmployee = [
+  {
+    type: "input",
+    message: "What is the employees first name?",
+    name: "emFirst"
+  },
+  {
+    type: "input",
+    message: "What is the employees last name?",
+    name: "emLast"
+  },
+  {
+    type: "list",
+    message: "",
+    choices: "",
+    name: ""
+  }
+]
