@@ -11,6 +11,7 @@ CREATE TABLE department (
 CREATE TABLE role (
 id INT PRIMARY KEY AUTO_INCREMENT,
 title VARCHAR(30),
+department_id INT,
 salary DECIMAL
 
 );
@@ -21,3 +22,13 @@ CREATE TABLE employee (
   role_id INT NOT NULL,
   manager_id INT
 );
+
+INSERT INTO roles (title, department_id, salary)
+VALUES ("Junior Dev", 3 , 65000)
+
+INSERT INTO department (name)
+VALUES ("Sales Team"),
+ ("Influencer Team"),
+ ("Ops Team"),
+ ("LP Team"),
+ ("Leadership")
