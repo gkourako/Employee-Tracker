@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS corp_db;
 
 CREATE DATABASE corp_db;
 
@@ -21,3 +22,4 @@ CREATE TABLE employee (
   role_id INT NOT NULL,
   manager_id INT
 );
+

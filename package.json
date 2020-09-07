@@ -4,6 +4,7 @@
   "description": "",
   "main": "employeeTracker.js",
   "scripts": {
+    "start": "node employeeTracker.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/gkourako/Employee-Tracker#readme",
   "dependencies": {
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
   }
 }
