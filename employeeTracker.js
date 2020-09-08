@@ -158,7 +158,7 @@ function addEmp() {
         {
           first_name: data.emFirst,
           last_name: data.emLast,
-          role_id: filteredArray[0].id
+          // role_id: filteredArray[0].id
 
         }, (err, res) => {
           if (err) throw err
@@ -192,17 +192,17 @@ function addRol() {
 };
 
 function addDep() {
-  inquirer.prompt(addDepartment).then(function (data) {
-    connection.query("SELECT * FROM department", (err, res) => { 
-      const filteredArray = res.filter(val => data.departmentTitle === val.name)
-
-      connection.query("INSERT INTO department SET ?", 
-      {
-        name: data.departmentTitle,
-      })
-
-    })
-  })
+  inquirer.prompt({
+    type: "input",
+    message: "What is the title of this department?",
+    name: "departmentTitle"
+  }).then(function(maryP){
+    connection.query("INSERT INTO department (department) VALUES (?)", [maryP.departmentTitle], function (err, res) {
+      if (err) throw err;
+      
+      afterConnection()
+    });
+  });
 }
 
 
