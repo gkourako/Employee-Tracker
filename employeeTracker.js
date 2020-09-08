@@ -96,30 +96,15 @@ const viewByRole = [
   }
 ];
 
-// const updateEmployee = [
-//   {
-//     type: "list",
-//     messsage: "Which employee do you want to update?",
-//     // choices: "",
-//     name: "emID"
-//   },
-//   {
-//     type: "list",
-//     messsage: "Which role is this employee switching to?",
-//     // choices: "",
-//     name: "emNewRole"
-//   }
-// ];
-
 connection.connect(function (err) {
   if (err) throw (err);
-  console.log("Connected as if" + connection.threadId);
+ 
   afterConnection();
 });
 
 function afterConnection() {
   inquirer.prompt(main).then(function (mainChoice) {
-    console.log(mainChoice.main);
+    
     const main = mainChoice.main
     if (main === "View all employees") {
       viewEmp()
@@ -133,9 +118,7 @@ function afterConnection() {
       addRol()
     } else if (main === "Add deparment") {
       addDep()
-    } else if (main === "Update employee role") {
-      upEmpRol()
-    }
+    } 
 
     else {
       connection.end()
@@ -147,10 +130,10 @@ function afterConnection() {
 
 function addEmp() {
   inquirer.prompt(addEmployee).then(function (data) {
-    console.log(data)
+  
 
     connection.query("SELECT * FROM role", (err, res) => {
-      console.log(res)
+      
       const filteredArray = res.filter(val => data.emRole === val.title
       )
       // console.log(filteredArray)
@@ -175,7 +158,7 @@ function addRol() {
 
       const filteredArray = res.filter(val => data.roleDepartment === val.title
       )
-      // console.log(filteredArray)
+      console.log(filteredArray)
       connection.query("INSERT INTO role SET ?",
         {
           title: data.roleTitle,
