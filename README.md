@@ -31,6 +31,14 @@ No contributions and this time please.
 
 There is no testing needed.
 
+## Visuals
+
+![Screenshot](scS1.png)
+
+
+![Screenshot](scS2.png)
+
+
 ## Questions
 
 You made it this far! If you have questions contact me on [GitHub] (http://github.com/gkourako).  If not you can email me at georgekourakos4@gmail.com
